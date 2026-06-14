@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
+const basePath = '/avenex-property';
+
 const nextConfig = {
   reactStrictMode: true,
   output: 'export', // Enable static HTML exports
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   images: {
     unoptimized: true, // Required for static exports on GitHub Pages
     formats: ['image/webp'],

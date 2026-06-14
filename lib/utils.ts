@@ -39,8 +39,8 @@ export function isTablet(): boolean {
 }
 
 export function getAssetPath(path: string): string {
-  const basePath = "/avenex-property";
-  if (path.startsWith(basePath)) return path;
-  return `${basePath}${path.startsWith('/') ? '' : '/'}${path}`;
+  const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  if (!bp || path.startsWith(bp)) return path;
+  return `${bp}${path.startsWith('/') ? '' : '/'}${path}`;
 }
 
