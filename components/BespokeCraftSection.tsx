@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
-import { prefersReducedMotion } from "@/lib/utils";
+import { prefersReducedMotion, getAssetPath } from "@/lib/utils";
 import SectionLabel from "@/components/ui/SectionLabel";
 
 const CRAFT_IMAGES = [
@@ -60,7 +60,7 @@ export default function BespokeCraftSection() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={img.src}
+                src={getAssetPath(img.src)}
                 alt={img.alt}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

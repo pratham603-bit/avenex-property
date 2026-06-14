@@ -37,3 +37,10 @@ export function isTablet(): boolean {
   if (typeof window === "undefined") return false;
   return window.innerWidth >= 768 && window.innerWidth < 1024;
 }
+
+export function getAssetPath(path: string): string {
+  const basePath = "/avenex-property";
+  if (path.startsWith(basePath)) return path;
+  return `${basePath}${path.startsWith('/') ? '' : '/'}${path}`;
+}
+

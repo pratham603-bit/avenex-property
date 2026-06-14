@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
-import { cn, prefersReducedMotion } from "@/lib/utils";
+import { cn, prefersReducedMotion, getAssetPath } from "@/lib/utils";
 import SectionLabel from "@/components/ui/SectionLabel";
 
 const SERVICES = [
@@ -100,7 +100,7 @@ export default function ServicesSection() {
               <div className="w-full aspect-[16/10] relative overflow-hidden rounded-xl mb-8 bg-[var(--mist)]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={service.image}
+                  src={getAssetPath(service.image)}
                   alt={service.title}
                   className="w-full h-full object-cover transition-transform duration-700 ease-aureon-out group-hover:scale-105"
                 />

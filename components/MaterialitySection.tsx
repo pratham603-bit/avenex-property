@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
-import { prefersReducedMotion } from "@/lib/utils";
+import { prefersReducedMotion, getAssetPath } from "@/lib/utils";
 import SectionLabel from "@/components/ui/SectionLabel";
 
 const MATERIALS = [
@@ -54,7 +54,7 @@ export default function MaterialitySection() {
               <div className="relative aspect-square overflow-hidden rounded-xl mb-6">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={mat.image}
+                  src={getAssetPath(mat.image)}
                   alt={mat.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

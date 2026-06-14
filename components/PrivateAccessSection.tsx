@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
-import { prefersReducedMotion } from "@/lib/utils";
+import { prefersReducedMotion, getAssetPath } from "@/lib/utils";
 import SectionLabel from "@/components/ui/SectionLabel";
 
 export default function PrivateAccessSection() {
@@ -146,7 +146,7 @@ export default function PrivateAccessSection() {
             <div className="relative aspect-[3/4] rounded-xl overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/private-mansion.png"
+                src={getAssetPath("/images/private-mansion.png")}
                 alt="Ultra-luxury private mansion at night"
                 className="w-full h-full object-cover"
               />

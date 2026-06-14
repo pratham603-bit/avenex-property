@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
-import { prefersReducedMotion } from "@/lib/utils";
+import { prefersReducedMotion, getAssetPath } from "@/lib/utils";
 import SectionLabel from "@/components/ui/SectionLabel";
 
 const AMENITIES = [
@@ -132,7 +132,7 @@ export default function SignatureAmenitiesSection() {
                 <div className="amenity-image absolute inset-[-40px] will-change-transform">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={amenity.image}
+                    src={getAssetPath(amenity.image)}
                     alt={amenity.title}
                     className="w-full h-full object-cover"
                   />

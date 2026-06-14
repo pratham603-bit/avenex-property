@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useCallback, useState } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
-import { prefersReducedMotion } from "@/lib/utils";
+import { prefersReducedMotion, getAssetPath } from "@/lib/utils";
 
 /* —— Config —— */
 const TOTAL_FRAMES = 218;
@@ -10,7 +10,7 @@ const FRAME_PATH = "/hero-frames/frame_";
 const FRAME_EXT = ".png";
 
 const pad = (n: number) => String(n).padStart(6, "0");
-const frameUrl = (i: number) => `${FRAME_PATH}${pad(i)}${FRAME_EXT}`;
+const frameUrl = (i: number) => getAssetPath(`${FRAME_PATH}${pad(i)}${FRAME_EXT}`);
 
 const COPY_SEQUENCE = [
   { text: "AVENEX", type: "title" as const, start: 0, end: 15 },
@@ -421,7 +421,7 @@ export default function HeroSection() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/cloud-overlay.png"
+            src={getAssetPath("/images/cloud-overlay.png")}
             alt=""
             className="w-full h-[200vh] object-cover"
             style={{ transform: "scaleX(-1)" }}
@@ -434,7 +434,7 @@ export default function HeroSection() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/cloud-overlay.png"
+            src={getAssetPath("/images/cloud-overlay.png")}
             alt=""
             className="w-full h-[180vh] object-cover"
           />
@@ -446,7 +446,7 @@ export default function HeroSection() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/cloud-overlay.png"
+            src={getAssetPath("/images/cloud-overlay.png")}
             alt=""
             className="w-full h-[160vh] object-cover"
             style={{ transform: "scaleX(-1) scaleY(-1)" }}
@@ -459,7 +459,7 @@ export default function HeroSection() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/cloud-overlay.png"
+            src={getAssetPath("/images/cloud-overlay.png")}
             alt=""
             className="w-full h-[140vh] object-cover"
             style={{ transform: "scaleY(-1)" }}

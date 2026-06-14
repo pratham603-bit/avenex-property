@@ -4,10 +4,11 @@ import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, Environment, Float } from "@react-three/drei";
 import * as THREE from "three";
+import { getAssetPath } from "@/lib/utils";
 
 function ArchModel() {
   const groupRef = useRef<THREE.Group>(null);
-  const { scene } = useGLTF("/Meshy_AI_Skybound_Retreat_0614093707_texture.glb");
+  const { scene } = useGLTF(getAssetPath("/Meshy_AI_Skybound_Retreat_0614093707_texture.glb"));
 
   useFrame((state) => {
     if (groupRef.current) {
